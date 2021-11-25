@@ -21,7 +21,7 @@ spec:
         deploymentconfig: python-ex-prod
     spec:
       containers:
-      - image: image-registry.openshift-image-registry.svc:5000/ruitest1/python-ex@sha256:4161b2dce1b5ebfc846ced794185fa0ab8791393a65757170d963eaa58a76b74
+      - image: image-registry.openshift-image-registry.svc:5000/ruitest1/python-ex@sha256:7de1ba1a60d2f40ba6c4f02f9985302b08fb3722a2b71bf92a19bbd3261b9624
         imagePullPolicy: Always
         name: python-ex-prod
         ports:

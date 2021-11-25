@@ -5,7 +5,7 @@ metadata:
     app: python-ex-prod
   name: python-ex-prod
 spec:
-  host: python-ex-prod-ruitest7.apps-crc.testing
+  host: python-ex-prod-ruitest1.apps.bj-linuxone-prod1.cdl.ibm.com
   port:
     targetPort: 8080-tcp
   to:

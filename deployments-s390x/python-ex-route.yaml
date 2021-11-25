@@ -1,0 +1,16 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  labels:
+    app: python-ex-prod
+  name: python-ex-prod
+spec:
+  host: python-ex-prod-ruitest7.apps-crc.testing
+  port:
+    targetPort: 8080-tcp
+  to:
+    kind: Service
+    name: python-ex-prod
+    weight: 100
+  wildcardPolicy: None
+

@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: python-ex-prod
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  selector:
+    matchLabels:
+      app: python-ex-prod
+  template:
+    metadata:
+      labels:
+        app: python-ex-prod
+        deploymentconfig: python-ex-prod
+    spec:
+      containers:
+      - image: image-registry.openshift-image-registry.svc:5000/ruitest1/python-ex@sha256:4161b2dce1b5ebfc846ced794185fa0ab8791393a65757170d963eaa58a76b74
+        imagePullPolicy: Always
+        name: python-ex-prod
+        ports:
+        - containerPort: 8080
+          protocol: TCP

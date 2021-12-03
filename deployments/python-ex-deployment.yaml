@@ -21,8 +21,8 @@ spec:
         deploymentconfig: python-ex-prod
     spec:
       containers:
-      - image: image-registry.openshift-image-registry.svc:5000/xk-test1/python-ex-git
-        imagePullPolicy: Always
+      - image: docker.io/xk96/python-ex-git
+        imagePullPolicy: IfNotPresent
         name: python-ex-prod
         ports:
         - containerPort: 8080
